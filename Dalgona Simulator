@@ -1,0 +1,172 @@
+-- Creating Ui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Dalgona Simulator", "Serpent")
+
+-- Creating Tab
+local AutoFarmTab = Window:NewTab("Auto Farm")
+local ToggleUiTab = Window:NewTab("Toggle Ui")
+
+-- Creating Section
+local AutoFarmSection = AutoFarmTab:NewSection("Auto Farm (You need to unlock the shape first)")
+local ToggleUiSection = ToggleUiTab:NewSection("Toggle Ui")
+
+-- Coding for AutoFarm Section
+
+AutoFarmSection:NewToggle("Circle", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Circle"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Square", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Square"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Triangle", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Triangle"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Diamond", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Diamond"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Star", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Star"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Hexagon", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Hexagon"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("W", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "W"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Arrow", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Arrow"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Plus", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Plus"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Umbrella", " ", function(state)
+    getgenv().AutoFarm = state
+    
+    while true do wait()
+        if getgenv().AutoFarm then
+            local args = {
+                [1] = "Umbrella"
+            }
+    
+            game:GetService("ReplicatedStorage").Remotes.Win:FireServer(unpack(args))
+            wait()
+        end
+    end
+end)
+
+
+-- Coding for Toggle UI section
+
+ToggleUiSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+    Library:ToggleUI()
+end)
+
+
