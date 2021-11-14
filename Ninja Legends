@@ -1,0 +1,88 @@
+-- Creating Tab
+local AutoFarmTab = Window:NewTab("Auto Farm")
+local TpTab = Window:NewTab("Teleport")
+local LocalPlayerTab = Window:NewTab("LocalPlayer")
+local ToggleUiTab = Window:NewTab("Toggle Ui")
+
+-- Creating Section
+local AutoFarmSection = AutoFarmTab:NewSection("Auto Farm")
+local TpSection = TpTab:NewSection("Telport")
+local LocalPlayerSection = LocalPlayerTab:NewSection("LocalPlayer")
+local ToggleUiSection = ToggleUiTab:NewSection("Toggle Ui")
+
+repeat wait() until game:IsLoaded() and game:GetService("Players")
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
+
+-- Coding Auto farm
+
+AutoFarmSection:NewToggle("Auto Swing", " ", function(state)
+    getgenv().AutoSwing = state
+
+    while true do wait()
+        if getgenv().AutoSwing then
+            local args = {
+                [1] = "swingKatana"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Auto Sell", " ", function(state)
+    getgenv().AutoSell = state
+
+    while true do wait()
+        if getgenv().AutoSell then
+            game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(84, 91255, 124)
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Auto Buy Sword", " ", function(state)
+    getgenv().AutobuySword = state
+
+    while true do wait()
+        if getgenv().AutoBuySword then
+            local args = {
+                [1] = "buyAllSwords",
+                [2] = "Blazing Vortex Island"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+AutoFarmSection:NewToggle("Auto Buy Belt", " ", function(state)
+    getgenv().AutoBuyBelt = state
+
+    while true do wait()
+        if getgenv().AutoBuyBelt then
+            local args = {
+                [1] = "buyAllBelts",
+                [2] = "Blazing Vortex Island"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+-- Coding for LocalPlayer section
+
+LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+LocalPlayerSection:NewSlider("JumpPower", "Changes how high you jump", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- Coding for Toggle UI section
+
+ToggleUiSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+    Library:ToggleUI()
+end)
