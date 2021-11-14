@@ -1,3 +1,8 @@
+-- Creating Ui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Dalgona Simulator", "Serpent")
+
+
 -- Creating Tab
 local AutoFarmTab = Window:NewTab("Auto Farm")
 local TpTab = Window:NewTab("Teleport")
