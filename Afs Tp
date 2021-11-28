@@ -1,0 +1,107 @@
+-- Creating Ui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Ninja Legends", "Serpent")
+
+
+-- Creating Tab
+local TpTab = Window:NewTab("Teleport")
+local LocalPlayerTab = Window:NewTab("LocalPlayer")
+local ToggleUiTab = Window:NewTab("Toggle Ui")
+
+-- Creating Section
+local TpSection = TpTab:NewSection("Telport")
+local LocalPlayerSection = LocalPlayerTab:NewSection("LocalPlayer")
+local ToggleUiSection = ToggleUiTab:NewSection("Toggle Ui")
+
+repeat wait() until game:IsLoaded() and game:GetService("Players")
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
+
+-- Coding for Tp section
+
+TpSection:NewButton("Dragon Ball", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-2384, -185, 439)
+end)
+
+TpSection:NewButton("Naruto", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-92, -183, 2606)
+end)
+
+TpSection:NewButton("Jojo", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(6, -184, -2401)
+end)
+
+TpSection:NewButton("One Piece", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(1711, -183, 298)
+end)
+
+TpSection:NewButton("My Hero Academia", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-1987, -185, 2040)
+end)
+
+TpSection:NewButton("Attack On Titan", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-713, -183, 546)
+end)
+
+TpSection:NewButton("Demon Slayer", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-3050, -184, -1032)
+end)
+
+TpSection:NewButton("Tokyo Ghoul", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-1922, -183, -1585)
+end)
+
+TpSection:NewButton("Hunter X Hunter", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(1677, -183, 2275)
+end)
+
+TpSection:NewButton("Sword Art Online", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(332, -183, -520)
+end)
+
+TpSection:NewButton("Bleach", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-2836, -184, -3644)
+end)
+
+TpSection:NewButton("Jujutsu Kaisen", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(1795, -184, -2401)
+end)
+
+TpSection:NewButton("One Punch Man", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(1090, -183, 4300)
+end)
+
+TpSection:NewButton("7 Deadly Sins", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(4280, -183, 546)
+end)
+
+TpSection:NewButton("Fate", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-4883, -185, -2353)
+end)
+
+TpSection:NewButton("Black Cover", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-63, -184, -4167)
+end)
+
+TpSection:NewButton("Full Metal Alchemists", " ", function()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(3867, -184, -3278)
+end)
+
+
+
+-- Coding for LocalPlayer section
+
+LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+LocalPlayerSection:NewSlider("JumpPower", "Changes how high you jump", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- Coding for Toggle UI section
+
+ToggleUiSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+    Library:ToggleUI()
+end)
