@@ -33,7 +33,46 @@ AutoSection:NewButton("Auto Open Defense Mode (Black cover)", " ", function()
             game:GetService("ReplicatedStorage").Remote.SummonTitan:FireServer(unpack(args))
 end)
 
+AutoSection:NewButton("Auto Open Defense Mode (Jojo)", " ", function()
 
+    local args = {    [1] = "1milfaves"}
+    game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(unpack(args))
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -181, -2315)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -181, -2315)
+    wait(1)
+        local args = {[1] = workspace.Worlds.Jojo.TitanSummon.Trigger}
+        game:GetService("ReplicatedStorage").Remote.SummonTitan:FireServer(unpack(args))
+end)
+
+
+AutoSection:NewButton("Auto Open Defense Mode (Attack On Titan)", " ", function()
+
+    local args = {    [1] = "1milfaves"}
+    game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(unpack(args))
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-752, -180, 633)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-752, -180, 633)
+    wait(1)
+        local args = {[1] = workspace.Worlds.AOT.TitanSummon.Trigger}
+        game:GetService("ReplicatedStorage").Remote.SummonTitan:FireServer(unpack(args))
+end)
+
+
+AutoSection:NewButton("Auto Open Defense Mode (Jujutsu Kaisen)", " ", function()
+
+    local args = {    [1] = "1milfaves"}
+    game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(unpack(args))
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1905, -181, -2379)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1905, -181, -2379)
+    wait(1)
+        local args = {[1] = workspace.Worlds.JJK.TitanSummon.Trigger}
+        game:GetService("ReplicatedStorage").Remote.SummonTitan:FireServer(unpack(args))
+end)
 
 -- Coding for LocalPlayer section
 
