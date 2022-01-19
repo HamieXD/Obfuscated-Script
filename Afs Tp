@@ -143,6 +143,19 @@ TpSection:NewButton("That Time I Got Reincarnated as a Slime", " ", function()
     game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(4876, -183, 3774)
 end)
 
+TpSection:NewButton("Fire Force", " ", function()
+    wait()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-5126, -185, -4686)
+    wait(0.5)
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-5126, -185, -4686)
+end)
+
+TpSection:NewButton("Record Of Ragnarok", " ", function()
+    wait()
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-1893, -185, 5540)
+    wait(0.5)
+    game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-1893, -185, 5540)
+end)
 
 -- Coding for LocalPlayer section
 
