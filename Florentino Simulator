@@ -1,0 +1,47 @@
+-- Creating Ui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Afs Auto Defense Mode", "Serpent")
+
+
+-- Creating Tab
+local AutoTab = Window:NewTab("Main")
+local LocalPlayerTab = Window:NewTab("LocalPlayer")
+local ToggleUiTab = Window:NewTab("Toggle Ui")
+
+-- Creating Section
+local AutoSection = AutoTab:NewSection("Auto Skill")
+local LocalPlayerSection = LocalPlayerTab:NewSection("LocalPlayer")
+local ToggleUiSection = ToggleUiTab:NewSection("Toggle Ui")
+
+repeat wait() until game:IsLoaded() and game:GetService("Players")
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
+
+-- Coding for Auto Skill section
+
+AutoSection:NewSlider("Auto Skill Z", "This will make you lag too!", function()
+    getgenv().AutoSkillZ = state
+
+    while true do wait()
+        if getgenv().AutoBuySword then
+            game:GetService("Players").LocalPlayer.Character.Florentino.Skill1.Fire:FireServer()
+        end
+    end
+end)
+
+-- Coding for LocalPlayer section
+
+LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+LocalPlayerSection:NewSlider("JumpPower", "Changes how high you jump", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- Coding for Toggle UI section
+
+ToggleUiSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+    Library:ToggleUI()
+end)
