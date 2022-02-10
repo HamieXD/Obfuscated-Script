@@ -20,7 +20,7 @@ end
 
 -- Coding for Auto Skill section
 
-AutoSection:NewToggle("Auto Skill Z", "This will make you lag too!", function()
+AutoSection:NewToggle("Auto Skill Z", "This will make a lot of lag!", function(state)
     getgenv().AutoSkillZ = state
 
     while true do wait()
@@ -29,6 +29,23 @@ AutoSection:NewToggle("Auto Skill Z", "This will make you lag too!", function()
         end
     end
 end)
+
+AutoSection:NewToggle("Auto Skill X", "This will make a lot of lag!", function(state)
+    getgenv().AutoSkillX = state
+
+    while true do wait()
+        if getgenv().AutoSkillX then
+            local args = {
+                [1] = CFrame.new(Vector3.new(-168.87646484375, 1, -286.34539794922), Vector3.new(0.37468290328979, -0.7336939573288, -0.56683856248856)),
+                [2] = Vector3.new(-168.87646484375, 1, -286.34539794922)
+            }
+
+            game:GetService("Players").LocalPlayer.Character.Florentino.Skill2.RemoteEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+
 
 -- Coding for LocalPlayer section
 
