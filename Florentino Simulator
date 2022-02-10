@@ -20,7 +20,7 @@ end
 
 -- Coding for Auto Skill section
 
-AutoSection:NewSlider("Auto Skill Z", "This will make you lag too!", function()
+AutoSection:NewToggle("Auto Skill Z", "This will make you lag too!", function()
     getgenv().AutoSkillZ = state
 
     while true do wait()
