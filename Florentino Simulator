@@ -24,7 +24,7 @@ AutoSection:NewSlider("Auto Skill Z", "This will make you lag too!", function()
     getgenv().AutoSkillZ = state
 
     while true do wait()
-        if getgenv().AutoBuySword then
+        if getgenv().AutoSkillZ then
             game:GetService("Players").LocalPlayer.Character.Florentino.Skill1.Fire:FireServer()
         end
     end
