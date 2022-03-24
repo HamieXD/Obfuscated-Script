@@ -157,6 +157,41 @@ TpSection:NewButton("Record Of Ragnarok", " ", function()
     game:GetService('Players').LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame = CFrame.new(-1893, -185, 5540)
 end)
 
+TpSection:NewButton("Fairy Tail", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2124.29443359375, -183.92446899414062, -5739.28857421875)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2124.29443359375, -183.92446899414062, -5739.28857421875)
+end)
+
+TpSection:NewButton("Re:Zero", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5183.259765625, -183.2923583984375, 9441.138671875)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5183.259765625, -183.2923583984375, 9441.138671875)
+end)
+
+TpSection:NewButton("Chainsaw Man", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5202.4404296875, -183.1861572265625, 5069.03857421875)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5202.4404296875, -183.1861572265625, 5069.03857421875)
+end)
+
+TpSection:NewButton("Mob Psycho", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1922.4404296875, -183.56112670898438, -5577.96142578125)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1922.4404296875, -183.56112670898438, -5577.96142578125)
+end)    
+
+TpSection:NewButton("Dorohedoro", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7190.1591796875, -183.56112670898438, 300.138671875)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7190.1591796875, -183.56112670898438, 300.138671875)
+end)
+
 -- Coding for LocalPlayer section
 
 LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
