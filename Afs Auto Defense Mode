@@ -20,6 +20,19 @@ end
 
 -- Coding for Auto Defense mode section
 
+AutoSection:NewButton("Auto Open Defense Mode (Mob Psycho)", " ", function()
+   
+    local args = {    [1] = "1milfaves"}
+        game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(unpack(args))
+        wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1994.3885498046875, -180.14743041992188, -5460.021484375)
+        wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1994.3885498046875, -180.14743041992188, -5460.021484375)
+        wait(1)
+            local args = {[1] = workspace.Worlds.Mob100.TitanSummon.Trigger}
+            game:GetService("ReplicatedStorage").Remote.SummonTitan:FireServer(unpack(args))
+end)
+
 AutoSection:NewButton("Auto Open Defense Mode (Record of ragnarok)", " ", function()
    
     local args = {    [1] = "1milfaves"}
