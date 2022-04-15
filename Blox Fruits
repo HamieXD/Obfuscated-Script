@@ -1,0 +1,188 @@
+    -- Creating Ui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Blox Fruits", "Serpent")
+
+-- Creating Tab
+local AutoTab = Window:NewTab("Main ")
+local BuyTab = Window:NewTab("Auto buy item")
+local LocalPlayerTab = Window:NewTab("LocalPlayer")
+local ToggleUiTab = Window:NewTab("Toggle Ui")
+
+-- Creating Section
+local AutoSection = AutoTab:NewSection("Main")
+local BuySection = BuyTab:NewSection("Buy Ability")
+local LocalPlayerSection = LocalPlayerTab:NewSection("LocalPlayer")
+local ToggleUiSection = ToggleUiTab:NewSection("Toggle Ui")
+
+repeat wait() until game:IsLoaded() and game:GetService("Players")
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
+
+-- Coding for Main section
+
+AutoSection:NewButton("Open Devil Fruit Awakning", " ", function()
+    game.Players.localPlayer.PlayerGui.Main.AwakeningToggler.Visible = true                           
+    end)
+
+AutoSection:NewButton("Open Inventory", " ", function()
+    game.Players.localPlayer.PlayerGui.Main.Inventory.Visible = true                          
+    end)
+
+AutoSection:NewButton("Open Devil Fruit Shop", " ", function()
+    game.Players.localPlayer.PlayerGui.Main.FruitShop.Visible = true
+    end)
+
+AutoSection:NewButton("Open Haki color", " ", function()
+    game.Players.localPlayer.PlayerGui.Main.Colors.Visible = true                          
+    end)
+
+AutoSection:NewButton("Open Title", " ", function()
+    game.Players.localPlayer.PlayerGui.Main.Titles.Visible = true                          
+    end)
+
+AutoSection:NewLabel("Auto Join team")
+   
+AutoSection:NewButton("Join Pirates", " ", function()
+    local args = {
+        [1] = "SetTeam",
+        [2] = "Pirates"
+        }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    end)
+
+AutoSection:NewButton("Join Marines", " ", function()
+    local args = {
+        [1] = "SetTeam",
+        [2] = "Marines"
+        }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    end)
+
+-- Coding for Buy section
+
+BuySection:NewButton("Geppo", " ", function()
+    local args = {
+        [1] = "BuyHaki",
+        [2] = "Geppo"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Soru", " ", function()
+    local args = {
+        [1] = "BuyHaki",
+        [2] = "Soru"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Buso Haki", " ", function()
+    local args = {
+        [1] = "BuyHaki",
+        [2] = "Buso"
+    }
+
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewLabel("Auto Buy FIghting style")
+
+BuySection:NewButton("BlackLeg", " ", function()
+    local args = {
+        [1] = "BuyBlackLeg"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Electro", " ", function()
+    local args = {
+        [1] = "BuyElectro"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Fishman Karate", " ", function()
+    local args = {
+        [1] = "BuyFishmanKarate"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("DragonClaw", " ", function()
+    local args = {
+        [1] = "BlackbeardReward",
+        [2] = "DragonClaw",
+        [3] = "1"
+    }
+
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    local args = {
+        [1] = "BlackbeardReward",
+        [2] = "DragonClaw",
+        [3] = "2"
+    }
+
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Superhuman", " ", function()
+    local args = {
+    [1] = "BuySuperhuman"
+}
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("DeathStep", " ", function()
+    local args = {
+        [1] = "BuyDeathStep"
+    }
+
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Sharkman Karate", " ", function()
+    local args = {
+        [1] = "BuySharkmanKarate",
+        [2] = true
+    }
+
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    local args = {
+        [1] = "BuySharkmanKarate"
+    }
+
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+BuySection:NewButton("Electric Claw", " ", function()
+    local args = {
+        [1] = "BuyElectricClaw",
+        [2] = true
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+    local args = {
+        [1] = "BuyElectricClaw"
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+-- Coding for LocalPlayer section
+
+LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+LocalPlayerSection:NewSlider("JumpPower", "Changes how high you jump", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- Coding for Toggle UI section
+
+ToggleUiSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+    Library:ToggleUI()
+end)
