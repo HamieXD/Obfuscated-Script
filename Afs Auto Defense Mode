@@ -20,16 +20,16 @@ end
 
 -- Coding for Auto Defense mode section
 
-AutoSection:NewButton("Auto Open Defense Mode (Mob Psycho)", " ", function()
+AutoSection:NewButton("Auto Open Defense Mode (Jojo Stone Ocean)", " ", function()
    
     local args = {    [1] = "1milfaves"}
         game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(unpack(args))
         wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1994.3885498046875, -180.14743041992188, -5460.021484375)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8142.85986328125, -179.53660583496094, 4972.55810546875)
         wait(0.5)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1994.3885498046875, -180.14743041992188, -5460.021484375)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8142.85986328125, -179.53660583496094, 4972.55810546875)
         wait(1)
-            local args = {[1] = workspace.Worlds.Mob100.TitanSummon.Trigger}
+            local args = {[1] = workspace.Worlds.JJBAStoneOcean.TitanSummon.Trigger}
             game:GetService("ReplicatedStorage").Remote.SummonTitan:FireServer(unpack(args))
 end)
 
