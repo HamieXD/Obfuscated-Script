@@ -192,6 +192,27 @@ TpSection:NewButton("Dorohedoro", " ", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7190.1591796875, -183.56112670898438, 300.138671875)
 end)
 
+TpSection:NewButton("Boruto", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3939.0810546875, -183.88072204589844, 1129.51953125)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3939.0810546875, -183.88072204589844, 1129.51953125)
+end)
+
+TpSection:NewButton("Tokyo Revengers", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7793.3486328125, -182.5511474609375, 2891.844482421875)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7793.3486328125, -182.5511474609375, 2891.844482421875)
+end)
+
+TpSection:NewButton("JJBA Stone Ocean", " ", function()
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8194.359375, -182.9923858642578, 4903.1884765625)
+    wait(0.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8194.359375, -182.9923858642578, 4903.1884765625)
+end)
+
 -- Coding for LocalPlayer section
 
 LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
