@@ -1,0 +1,96 @@
+-- Creating Ui
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Dunking Simulator", "Serpent")
+
+
+-- Creating Tab
+local AutoTab = Window:NewTab("Main")
+local LocalPlayerTab = Window:NewTab("LocalPlayer")
+local ToggleUiTab = Window:NewTab("Toggle Ui")
+
+-- Creating Section
+local AutoSection = AutoTab:NewSection("Main")
+local LocalPlayerSection = LocalPlayerTab:NewSection("LocalPlayer")
+local ToggleUiSection = ToggleUiTab:NewSection("Toggle Ui")
+
+repeat wait() until game:IsLoaded() and game:GetService("Players")
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+v:Disable()
+end
+
+-- Coding for Main section
+
+AutoSection:NewButton("100% accuracy", " ", function()
+   
+    local p = require(game:GetService("ReplicatedStorage").Shootball.Percentage)
+    p.CalculatePercentage = function()
+      return 100
+    end
+end)
+
+AutoSection:NewButton("Equip Shirt", " ", function()
+   
+    local args = {
+        [1] = 22
+    }
+
+    game:GetService("ReplicatedStorage").EquipJersey:FireServer(unpack(args))
+
+end)
+
+AutoSection:NewButton("Equip Ball", " ", function()
+   
+    local args = {
+        [1] = 28
+    }
+    
+    game:GetService("ReplicatedStorage").EquipBall:FireServer(unpack(args))
+end)
+
+AutoSection:NewButton("Unlimited Boost", " ", function()
+   
+    function unlockzones()
+        pcall(function()
+        for i,v in pairs(game:GetService("Workspace").Zones:GetChildren()) do
+            getsenv(game.Players.LocalPlayer.PlayerScripts.InitialGateUnlock).GateDestroyer(v.Name)
+        end
+        end)
+        end
+        
+        function add_item(x, amount)
+            for i = 1,amount do
+                game:GetService("ReplicatedStorage").Remote.DailySpin.AddToInventory:FireServer(x, true)
+                end
+        end
+     
+        function use_item(x, amount)
+            for i = 1,amount do
+     game:GetService("ReplicatedStorage").Remote.Boost.BoostStart:FireServer(x)
+            end
+        end
+        
+        unlockzones()
+        add_item("1000xCash", 100)
+        use_item("1000xCash", 100)
+end)
+
+AutoSection:NewButton("Rebirth", " ", function()
+   
+    game:GetService("ReplicatedStorage").Rebirth:FireServer()
+end)
+
+-- Coding for LocalPlayer section
+
+LocalPlayerSection:NewSlider("WalkSpeed", "Changes how fast you walk/run", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+LocalPlayerSection:NewSlider("JumpPower", "Changes how high you jump", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- Coding for Toggle UI section
+
+ToggleUiSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+    Library:ToggleUI()
+end)
