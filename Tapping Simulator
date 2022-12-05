@@ -10,6 +10,7 @@
         getgenv().autoHatch = true
         getgenv().selectEgg = "Starter"
         getgenv().autoClaim = true
+        getgenv().autoTapEvent = true
     
         -- Functions
         function autoTap()
@@ -40,6 +41,13 @@
             end
         end
 
+        function autoTapEvent()
+            while getgenv().autoTapEvent == true do
+                game:GetService("ReplicatedStorage").Events.Tap:FireServer(5)
+                wait()
+            end
+        end    
+
         -- Creating Tab
         local FarmTab = Window:MakeTab({
             Name = "AutoFarm",
@@ -66,6 +74,15 @@
             Callback = function(Value)
                 getgenv().autoTap = Value
                 autoTap()
+            end    
+        })
+
+        FarmTab:AddToggle({
+            Name = "Auto Tap Event",
+            Default = false,
+            Callback = function(Value)
+                getgenv().autoTapEvent = Value
+                autoTapEvent()
             end    
         })
 
@@ -100,7 +117,7 @@
         FarmTab:AddDropdown({
             Name = "Select Rebirth",
             Default = "1",
-            Options = {"1", "5", "10", "20", "100", "500", "4000", "13500", "32000", "62500", "108000", "171500", "256000", "364500", "500000", "1000000", "2000000", "100000000", "1000000000", "10000000000", "100000000000000"},
+            Options = {"1", "5", "10", "20", "100", "500", "4000", "13500", "32000", "62500", "108000", "171500", "256000", "364500", "500000", "1000000", "2000000", "100000000", "1000000000", "10000000000", "1000000000000"},
             Callback = function(Value)
                 getgenv().selectReb = Value
                 print(getgenv().selectReb)
