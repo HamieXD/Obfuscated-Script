@@ -15,7 +15,7 @@
         -- Functions
         function autoTap()
             while getgenv().autoTap == true do
-                game:GetService("ReplicatedStorage").Events.Tap:FireServer(1)
+                game:GetService("ReplicatedStorage").Events.Tap:FireServer("Main")
                 wait()
             end
         end
@@ -43,7 +43,7 @@
 
         function autoTapEvent()
             while getgenv().autoTapEvent == true do
-                game:GetService("ReplicatedStorage").Events.Tap:FireServer(5)
+                game:GetService("ReplicatedStorage").Events.Tap:FireServer("Events")
                 wait()
             end
         end    
